@@ -9,7 +9,10 @@ from torch import nn
 import random
 import igraph
 import scipy
-import spectral_entropy
+try:
+    import spectral_entropy
+except:
+    pass
 import plotly.graph_objects as go
 import torch.nn.functional as F
 import pytorch_lightning as pl

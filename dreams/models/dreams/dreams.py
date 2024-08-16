@@ -370,7 +370,7 @@ class DreaMS(pl.LightningModule):
         Normalizes raw m/z values. Notice, that it is not in dataset `__getitem__ `because raw m/z values are still needed
         for Fourier features. Intensities are supposed to be normalized in `__getitem__`.
         """
-        return spec / torch.tensor([self.dformat.max_mz, 1.], device=self.device, dtype=self.dtype)
+        return spec / torch.tensor([self.dformat.max_mz, 1.], device=spec.device, dtype=self.dtype)
 
     # def get_attention_scores(self, data):
     #     attn_scores = {}
